@@ -1,0 +1,45 @@
+---
+type: page
+title: AMC Cinema
+date: 2021-03-19
+---
+
+# AMC Cinema
+
+AMC Cinema is a project that I build after learning intermediate concepts in React.js. This application was the perfect way to improve my understanding React but also putting those newly learnt concepts to use. In this project, I utilized The Movie DataBase API to gather the movies and series data and injected this data based on the requested genre.
+
+<img src="/images/banner.png" alt="project banner" />
+
+# Tech Stack Explanation
+
+I built this web application in two phases. In the first phase I built it with **React** and JavaScript. This seemed like the logical choice at the time and served it's purpose well. In the second phase, I decided to rebuild the entire application in **TypeScript**.
+
+Given the size of the application and the fact that I was working with large datasets and many API calls, It felt natural to use TypeScript on the project to ensure type safety.
+
+This may not be the best of reasons to use TypeScript on a project but I don't regret this choice considering it gave me an opportunity to learn how to implement TypeScript on a React project.
+
+I also used **React-Query** for fetching, caching and updating data from the API. This proved to be more effective than React's own `useEffect` hook.
+
+Using React-Query gave me more control over how I wanted data to be fetched in the application. For Example, I could choose to update certain datasets only when the window reloads or after a certain amount of time.
+
+As for styling the application, I used **Styled-Components** because it offers a simple way to use CSS in JavaScript. Unlike plain old CSS, I could interpolate strings, pass props and even carry out JavaScript operations within my CSS.
+
+For state management, I chose to go with React's own **Context-API** over Redux. Mainly because I was not yet comfortable working with Redux but the application itself didn't seem to be in the scope that would require using Redux.
+
+The Context API coupled with reducers served me well when it came to sharing global data and functions through out the application.
+
+# Challenges
+
+The biggest challenge I faced had to do with testing the application. I initially thought it would be easier to test the application after building it in its entirerity. That turned out to be a disastrous choice. It was a nightmare trying to test all the components. I unfortunately failed to test the components. This experience however gave me one of the biggest learning point from building this app.
+
+The second challenges had to do with changing requirements of the app. This was again my fault because I did not sit down to carefully curate all the features I specifically wanted for the app. As a result I spent a lot of time adding features which weren't really neccessary for the application. Another learning point.
+
+<img src="/images/movies.png" alt="booking" />
+
+The last challenge I faced building this application had to do with managing state for booking a movie. This turned to be harder than I thought but I love a challenge. This implementation turned out to have a lot of moving parts. For example i had to make sure that the user could not move to the next step before fulfilling the requirements for the previous step. I also had to make sure a user on the last booking step had the freedom to return the first step but couldn't move to the second if something was missing from the first (see what am talking about). I learnt the most about state manegement in this part of the app.
+
+# What I'd Do Differently
+
+- The first thing I'd do differently is sit down and actually plan every single feature I wanted to implement in the app. This would save me a lot of back and forth thinking about what to add and what to leave out. It would also save me a lot of valuable time.
+- I'd also follow the **Test Driven Development** approach where instead of building the entire application first, I'd test every feature before implementing it. This way it would be easier to test features and spot edge cases.
+- The very last thing I'd do differently is ask for code reviews from senior developers. Given the size of the application, I'm sure this would give me a better opportunity to learn how to write clean code and best practices.
