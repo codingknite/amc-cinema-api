@@ -5,7 +5,7 @@ This is a mini Back-End API I created for [AMC Cinema](https://github.com/coding
 You will need to generate an API Key from [TMDB](https://www.themoviedb.org/documentation/api). This API key is assigned to the `API_KEY` variable in the root `.env` file
 
 ## Scripts
-### `npm start` 
+#### `npm start` 
 run the node production server on localhost **port 8000**
 
 #### `npm start` 
