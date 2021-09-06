@@ -52,7 +52,7 @@ router.get('/now-playing', async (req, res) => {
 router.get('/coming-soon', async (req, res) => {
   try {
     const APIKey = process.env.API_KEY;
-    const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/upcoming?api_key=hi${APIKey}&language=en-US&page=1`);
+    const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/upcoming?api_key=${APIKey}&language=en-US&page=1`);
 
     const comingSoonMovies = comingSoonData.data.results.slice(3, 8);
 
