@@ -1,10 +1,11 @@
+require('dotenv').config();
 const axios = require('axios');
 const router = require('express').Router();
 const config = require('../utils/config');
 
 router.get('/featured', async (req, res) => {
   try {
-    const featuredData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=${config.APIKey}&language=en-US&page=1`);
+    const featuredData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=62a1040c14871297d98bade90a06b02d&language=en-US&page=1`);
 
     const featuredMovies = [];
 
@@ -29,7 +30,8 @@ router.get('/featured', async (req, res) => {
 
 router.get('/now-playing', async (req, res) => {
   try {
-    const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/now_playing?api_key=${config.APIKey}&language=en-US&page=1`);
+    const APIKey = process.env.API_KEY;
+    const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/now_playing?api_key=${APIKey}&language=en-US&page=1`);
 
     const comingSoonMovies = comingSoonData.data.results.slice(0, 10);
 
@@ -48,7 +50,8 @@ router.get('/now-playing', async (req, res) => {
 
 router.get('/coming-soon', async (req, res) => {
   try {
-    const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/upcoming?api_key=${config.APIKey}&language=en-US&page=1`);
+    const APIKey = process.env.API_KEY;
+    const comingSoonData = await axios.get(`${config.baseApiUrl}/movie/upcoming?api_key=hi${APIKey}&language=en-US&page=1`);
 
     const comingSoonMovies = comingSoonData.data.results.slice(3, 8);
 
