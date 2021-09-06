@@ -5,7 +5,8 @@ const config = require('../utils/config');
 
 router.get('/featured', async (req, res) => {
   try {
-    const featuredData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=62a1040c14871297d98bade90a06b02d&language=en-US&page=1`);
+    const APIKey = process.env.API_KEY;
+    const featuredData = await axios.get(`${config.baseApiUrl}/movie/popular?api_key=${APIKey}&language=en-US&page=1`);
 
     const featuredMovies = [];
 
